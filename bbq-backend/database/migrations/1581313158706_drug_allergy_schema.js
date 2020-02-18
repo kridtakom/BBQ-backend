@@ -6,10 +6,11 @@ const Schema = use('Schema')
 class DrugAllergySchema extends Schema {
   up () {
     this.create('drug_allergies', (table) => {
-      table.string('medicine_id', 10).primary() //PK
+      table.increments('drugmedicine_id').primary() //PK
       table.string('medicine_name', 70)
-      table.string('user_id', 10) // [FK]
-      table.text('symtoms', 255)
+      table.integer('user_id') // [FK]
+      table.text('symtoms')
+
       table.timestamps()
     })
   }

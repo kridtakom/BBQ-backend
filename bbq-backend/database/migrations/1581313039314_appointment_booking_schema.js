@@ -6,9 +6,9 @@ const Schema = use('Schema')
 class AppointmentBookingSchema extends Schema {
   up () {
     this.create('appointment_bookings', (table) => {
-      table.string('appointment_id', 100).primary() //[PK]
-      table.string('patient_id', 10)  //[FK]
-      table.string('docter_id', 10) //[FK]
+      table.increments('appointment_id', 100).primary() //[PK]
+      table.integer('patient_id')  //[FK]
+      table.integer('docter_id') //[FK]
       table.string('symptoms', 255)
       table.text('feedback_from_doctor')
       table.boolean('check').defaultTo(false) // [Boolean]

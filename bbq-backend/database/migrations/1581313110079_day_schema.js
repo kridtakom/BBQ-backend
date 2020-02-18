@@ -6,10 +6,9 @@ const Schema = use('Schema')
 class DaySchema extends Schema {
   up () {
     this.create('days', (table) => {
-      table.string('day_id', 255).primary() //PK
+      table.increments('day_id').primary() //PK
       table.string('day', 10)
-      table.boolean('availability')
-      table.string('type_id', 10) //FK
+      
       table.timestamps()
     })
   }

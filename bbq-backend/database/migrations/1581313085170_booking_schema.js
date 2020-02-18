@@ -11,7 +11,8 @@ class BookingSchema extends Schema {
       table.string('time_out', 15)
       table.date('date')
       table.boolean('status').defaultTo(false) // [Boolean] // CK
-      table.string('type_id', 10) // [FK]
+      table.integer('type_id') // [FK]
+     
       table.timestamps()
     })
   }

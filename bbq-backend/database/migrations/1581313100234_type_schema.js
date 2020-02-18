@@ -6,11 +6,12 @@ const Schema = use('Schema')
 class TypeSchema extends Schema {
   up () {
     this.create('types', (table) => {
-      table.string('type_id', 10).primary() //PK
+      table.increments('type_id').primary() //PK
       table.string('type_name', 40)
       table.integer('time_slot').notNullable()
-      table.string('start_time', 25).notNullable()
-      table.string('end_time', 25).notNullable()
+      table.time('start_time').notNullable()
+      table.time('end_time').notNullable()
+      
       table.timestamps()
     })
   }
